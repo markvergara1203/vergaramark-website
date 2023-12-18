@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse ; 
+            width: 50%; 
+            margin: 0;
+            margin-left: auto;
+            background-color: burlywood;
+            border-radius: 10px;
+            height: 4.3vh;
+            margin-right: 40px;
+            box-shadow: 0 0 0 2px #8B4513;
+        }
+        th 
+        {
+            width: 25vw;
+            font-size: 1.1vw;
+        }
+        th a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            position: relative;
+        }
+        th a::after {
+            content: '';
+            display: block;
+            width: 0;
+            background-color: #8B4513;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            height: 18%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        th a:hover::after {
+            width: 100%;
+
+        }
+        th a.stay::after {
+            width: 100%;
+        }
+        h1 {
+            font-family: 'Chonburi', serif;
+            text-align: center;
+            font-size: 2.2vw;
+        }
+        body {
+            background-color: #CC9966;
+        }
+        .resume-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            margin: 40px auto 20px;
+        }
+        .imaging {
+            position: absolute;
+            margin-top: 6px;
+            right: 2%;
+            margin: 20px;
+        }
+        .imaging img{
+            width: 5vw;
+            margin-left: 50px;
+            height: 60px;
+            margin-bottom: 0;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+        }
+        .imaging img:hover {
+            transform: scale(1.05);
+        }
+        .resume h1 {
+            margin: 0;
+        }
+        .resume {
+            text-align: center;
+            flex-grow: 1; 
+        }
+        #displayText,
+        #anotherDisplayText,
+        #skillsDisplayText,
+        #experiencesDisplayText {
+            display: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: burlywood;
+            width: 60%;
+            margin: auto;
+            height: 40%;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            border-color: #8B4513;
+            line-height: 1.5;
+        }
+        #displayText, #experiencesDisplayText{
+            padding: 10px;
+        }
+        #anotherDisplayText {
+            width: 57%;
+            margin: auto;
+            height: 5%;
+            border: 2px solid transparent;
+            border-color: #8B4513;
+            text-align: left;
+        }
+        #skillsDisplayText {
+            width: 57%;
+            margin: auto;
+            height: 120px;
+            border: 2px solid transparent;
+            border-color: #8B4513;
+            text-align: left;
+        }
+        .button {
+            width: 11.5vw;
+            height: 10.1vh;
+            border-radius: 20px;
+            background-color: bisque;
+            margin-left: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.3vw;
+            transform: scale(1);
+            border-color:#8B4513;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .button:hover{
+            transform: scale(1.1);
+        }
+        .spacing-vertically {
+            margin-bottom: 20px;
+        }
+        .btn-download {
+            margin-left: 90%;
+            background-color: burlywood;
+            border-radius: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1vw;
+            color: #8B4513;
+            padding: 7px 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            border: 2px solid #8B4513;
+        }
+        .btn-download:hover {
+            transform: scale(1.1);
+        }
+        .hire-me {
+            margin-left: 90%;
+            background-color: #8B4513;
+            border-radius: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1vw;
+            color: burlywood;
+            padding: 0.4vw 2.2vw;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            margin-top: 10px;
+            border: 2px solid burlywood;
+        }
+        .hire-me:hover {
+            transform: scale(1.1);
+        }
+        h4 {
+            font-family: 'Russo One', sans-serif;
+            margin-left: 3%;
+            margin-bottom: 0;
+            font-size: 1.7vw;
+            background-color: black;
+            width: 5.2vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .mav-3d {
+            text-shadow: 1px 1px 2px #000, 0 0 1em #8B4513, 0 0 0.2em #c48f5a;
+            position: absolute;
+            top: 3.6%;
+            left: 0.6%;
+        }
+        @media only screen and (max-width: 900px) {
+            table {
+                width: 73%;
+                margin-left: auto;
+                margin-right: 40px;
+            }
+            th {
+                width: auto;
+                font-size: 2vw;
+            }
+            .btn-download {
+                margin-left: 75%;
+                border-radius: 20px;
+                font-size: 1.8vw;
+                padding: 6px 9px;
+                font-weight: bold;
+                display: inline-block;
+                text-decoration: none;
+                text-align: center;
+            }
+            .hire-me {
+                margin-left: 75%;
+                border-radius: 20px;
+                font-size: 1.8vw;
+                padding: 0.9vw 4.3vw;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+            .resume-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .imaging img {
+                width: 10vw;
+                height: auto;
+                margin-bottom: 10px;
+            }
+            .button {
+                width: 23vw;
+                height: 10vh;
+                font-size: 2.7vw;
+                margin-left: 20px;
+                margin-top: 10px;
+                border-radius: 20px;
+                
+            }
+            #displayText,
+            #anotherDisplayText,
+            #skillsDisplayText,
+            #experiencesDisplayText {
+                width: 80%;
+                height: auto;
+                margin-top: 10px;
+                font-size: 2.4vw;
+            }
+            h4 {
+            margin-left: 2%;
+            margin-bottom: 0;
+            font-size: 2.5vw;
+            margin-top: 7%;
+            background-color: black;
+            width: 7.5vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+            .mav-3d {
+            text-shadow: 1px 1px 2px #000, 0 0 1em #8B4513, 0 0 0.2em #c48f5a;
+            position: absolute;
+            top: 2.1%;
+            left: 1.3%;
+        }
+        }
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 90%;
+                margin-left: auto;
+                margin-right: 30px;
+            }
+            th {
+                width: auto;
+                font-size: 2.5vw;
+            }
+            .btn-download {
+                margin-left: 75%;
+                border-radius: 20px;
+                font-size: 2.2vw;
+                padding: 6px 8px;
+            }
+            .hire-me {
+                margin-left: 75%;
+                border-radius: 20px;
+                font-size: 2.2vw;
+                padding: 1.5vw 5.6vw;
+                
+            }
+            .resume-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .imaging img {
+                width: 12vw;
+                height: auto;
+            }
+            .button {
+                width: 30vw;
+                height: 9vh;
+                font-size: 3.5vw;
+                margin-left: 20px;
+                border-radius: 20px;
+            }
+            #displayText,
+            #anotherDisplayText,
+            #skillsDisplayText,
+            #experiencesDisplayText {
+                width: 90%;
+                height: auto;
+                margin-top: 10px;
+                font-size: 2.8vw;
+            }
+            h4 {
+            font-family: 'Russo One', sans-serif;
+                margin-left: 2%;
+                margin-bottom: 0;
+                font-size: 3vw;
+                margin-top: 8%;
+                background-color: black;
+                width: 9vw;
+                border-radius: 5px;
+                padding: 2px;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+            .mav-3d {
+            text-shadow: 1px 1px 2px #000, 0 0 1em #8B4513, 0 0 0.2em #c48f5a;
+            top: 2.5%;
+        }
+        }
+    </style>
+    <script>
+        function objectives() {
+          var objectivetext = document.getElementById("displayText");
+          if (objectivetext.style.display === "none") {
+            objectivetext.style.display = "block";
+          } else {
+            objectivetext.style.display = "none";
+          }
+        }
+
+        function education() {
+          var educationText = document.getElementById("anotherDisplayText");
+          if (educationText.style.display === "none") {
+            educationText.style.display = "block";
+          } else {
+            educationText.style.display = "none";
+          }
+        }
+        function skills() {
+          var skillsText = document.getElementById("skillsDisplayText");
+          if (skillsText.style.display === "none") {
+            skillsText.style.display = "block";
+          } else {
+            skillsText.style.display = "none";
+          }
+        }
+        function experiences() {
+            var experiencesText = document.getElementById("experiencesDisplayText");
+            if (experiencesText.style.display === "none") {
+                experiencesText.style.display = "block";
+            } else {
+                experiencesText.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th><a href="Home.html"><i class="fa fa-fw fa-home"></i> HOME</a></th>
+            <th><a href="About.html"><i class="fa fa-user-circle-o"></i> ABOUT</a></th>
+            <th><a href="Resume.html" class="stay"><i class="fa fa-file-text"></i> RESUME</a></th>
+            <th><a href="Portfolio.html"><i class="fa fa-briefcase"></i> PORTFOLIO</a></th>
+            <th><a href="Contact.html"><i class="fa fa-envelope"></i> CONTACT</a></th>
+        </tr>
+    </table>
+    <div class ="resume-container">
+        <div class="logo">
+            <h4 class="mav-3d" style="border: 3px solid #8B4513;"><span style="color: burlywood;">MA</span><span style="color: #c48f5a;">AV</span></h4>
+        </div>
+            <div class="resume">
+                <h1>RESUME</h1>
+            </div>
+            <div class="imaging">
+                <a href="About.html">
+            <img src="imaging/white picture.png" alt="clickable Image"> 
+            </a>
+            </div>
+    </div>
+    <hr>
+    <br>
+    <a href="Resume_Vergara.pdf" download class="btn-download">Download PDF<br>
+        <i class="fa fa-download"></i>
+    </a>
+    <br>
+    <a href="Contact.html" class="hire-me">Hire Me<br>
+        <i class="fa fa-handshake-o"></i>
+    </a>
+    <br>
+    <button class="button" onclick="objectives()"><b>Show Objectives &#8250;&#8250;&#8250;</b></button>
+    <p id="displayText">To work in a dynamic professional environment with a growing organization and 
+        utilize my technical skill and abilities in the field of Information Technology
+        for the benefit of the organization and myself.</p>
+    <br class="spacing-vertically">
+    <br>
+    <button class="button" onclick="education()"><b>Show Education &#8250;&#8250;&#8250;</b></button>
+    <ul id="anotherDisplayText">
+        <li>Rizal Technological University BS in Information Technology | (Dean’s Lister)       | (2022-present)</li>
+        <li>Buting Senior High School Information and Communication Technology | (With Honors) 	| (2020-2022)</li>
+        <li>San Joaquin-Kalawaan High School 		|  (2016 – 2020)</li>
+        <li>San Joaquin Elementary School 			|  (2010-2016)</li>
+    </ul>
+    <br class="spacing-vertically">
+    <br>
+    <button class="button" onclick="skills()"><b>Show Skills <br>&#8250;&#8250;&#8250;</b></button>
+    <ul id="skillsDisplayText">
+        <li>Computer knowledge & Server Configuration skills</li>
+        <li>Programming ( C++, Java, SQL, Python)</li>
+        <li>Microsoft Office ( Ms Word, Excel, Powerpoint)</li>
+        <li>Hardware/Software troubleshooting</li>
+        <li>Knowledge on networking</li>
+    </ul>
+    <br class="spacing-vertically">
+    <br>
+    <button class="button" onclick="experiences()"><b>Show Experience &#8250;&#8250;&#8250;</b></button>
+    <p id="experiencesDisplayText">In the year 2021, I completed a program called the JDVP. 
+        In this program, I trained in how to install a server, configure a network, assemble and disassemble computer parts, 
+        and connect the internet to devices using the cable I created. It offers opportunities for me to obtain practical hands-on experience, 
+        which allows me to apply my theoretical understanding in real-world situations, improving my skills, comprehension, problem-solving, and critical thinking.
+    </p>
+</body>
+</html>

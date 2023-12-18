@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Porfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse ; 
+            width: 50%; 
+            margin: 0;
+            margin-left: auto;
+            background-color: #CC9966;
+            border-radius: 10px;
+            height: 4.3vh;
+            margin-right: 40px;
+            box-shadow: 0 0 0 2px #8B4513;
+        }
+        th 
+        {
+            width: 25vw;
+            font-size: 1.1vw;
+        }
+        th a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            position: relative;
+        }
+        th a::after {
+            content: '';
+            display: block;
+            width: 0;
+            background-color: #8B4513;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            height: 18%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        th a:hover::after {
+            width: 100%;
+        }
+        th a.stay::after {
+            width: 100%;
+        }
+        h1 {
+            font-family: 'Chonburi', serif;
+            text-align: center;
+            font-size: 2.2vw;
+            text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease-in-out;
+        }
+        body {
+            background-color: burlywood;
+        }
+        .system {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;   
+        }
+        .c_prog {
+            margin-right: 160px;
+            margin-left: 30px;
+        }
+        .c_prog img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px;
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.5); 
+
+        }
+        .c_prog img:hover {
+            transform: scale(1.1);
+        } 
+        .state {
+            margin-top: 9vw;
+            margin-left: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .state p {
+            width: 40vw;
+            margin-top: 0;
+            font-size: 1.1vw;
+            border-radius: 10px;
+            line-height: 1.5;
+            text-align: center;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+        }
+        .program {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+        }
+        .sql {
+            margin-left: 20px;
+            margin-right: 60px;
+        }
+        .sql img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px; 
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .sql img:hover {
+            transform: scale(1.1);
+        } 
+        .paliwanag {
+            margin-top: 10vw;
+            margin-right: 180px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .paliwanag p {
+            width: 100%;
+            margin-top: 0;
+            font-size: 1.1vw;
+            text-align: center;
+            line-height: 1.5;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+        }
+        .picture {
+            margin-right: 160px;
+            margin-left: 30px;
+        }
+        .picture img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px;
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+
+        }
+        .picture img:hover {
+            transform: scale(1.1);
+        } 
+        .description {
+            margin-top: 10vw;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .description p {
+            width: 40vw;
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.1vw;
+            border-radius: 10px;
+            line-height: 1.5;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+        }
+        .content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+        }
+        .pics {
+            margin-left: 20px;
+            margin-right: 60px;
+        }
+        .pics img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px; 
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .pics img:hover {
+            transform: scale(1.1);
+        } 
+        .definition {
+            margin-top: 10vw;
+            margin-right: 180px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .definition p {
+            width: 100%;
+            margin-top: 0;
+            font-size: 1.1vw;
+            text-align: center;
+            line-height: 1.5;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+            
+        }
+        .proj {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+        }
+        .imahe {
+            margin-right: 160px;
+            margin-left: 30px;
+        }
+        .imahe img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px;
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            
+        }
+        .meaning {
+            margin-top: 10vw;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .meaning p {
+            width: 40vw;
+            margin-top: 5px;
+            font-size: 1.1vw;
+            text-align: center;
+            border-radius: 10px;
+            line-height: 1.5;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+        }
+        .achieve {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+        }
+        .pictures {
+            margin-left: 20px;
+            margin-right: 60px;
+        }
+        .pictures img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px; 
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .pictures img:hover {
+            transform: scale(1.1);
+        } 
+        .statement {
+            margin-top: 10vw;
+            margin-right: 180px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .statement p {
+            width: 100%;
+            margin-top: 0;
+            font-size: 1.1vw;
+            text-align: center;
+            line-height: 1.5;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+        }
+        .awards {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+        }
+        .larawan {
+            margin-right: 160px;
+            margin-left: 30px;
+        }
+        .larawan img{
+            width: 35vw;
+            height: 31vw;
+            margin-bottom: 25px;
+            border: 3px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .explain {
+            margin-top: 10vw;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .explain p {
+            width: 40vw;
+            margin-top: 5px;
+            font-size: 1.1vw;
+            border-radius: 10px;
+            line-height: 1.5;
+            border: 2px solid #8B4513;
+            background-color: #CC9966;
+            padding: 8px;
+        }
+        h4 {
+            font-family: 'Russo One', sans-serif;
+            margin-left: 3%;
+            margin-bottom: 0;
+            font-size: 1.7vw;
+            margin-top: 0;
+            background-color: black;
+            width: 5.2vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .mav-3d {
+            text-shadow: 1px 1px 2px #000, 0 0 1em #8B4513, 0 0 0.2em #c48f5a;
+            top: 3%;
+        }
+        @media only screen and (max-width: 900px) {
+            table {
+                width: 73%;
+                height: 4vh;
+                margin-left: auto;
+                margin-right: 40px;
+            }
+            th {
+                width: auto;
+                font-size: 2vw;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+            
+            .sql,
+            .content, 
+            .achieve{
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                margin-left: 5%;
+            }
+            .sql img,
+            .pics img,
+            .pictures img {
+                width: 45vw;
+                height: 50vw;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 25px; 
+            }
+            .c_prog img,
+            .picture img,
+            .imahe img,
+            .larawan img {
+                width: 45vw;
+                height: 50vw;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 25px;
+                margin-top: 20px;
+            }
+            .paliwanag,
+            .definition,
+            .statement {
+                margin-top: 5vw;
+                margin-right: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .paliwanag p,
+            .definition p,
+            .statement p {
+                width: 50vw;
+                margin-top: 20px;
+                font-size: 2vw;
+            }
+            .state,
+            .description,
+            .meaning,
+            .explain  {
+                margin-top: 10vw;
+                margin-left: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+            .state p,
+            .description p,
+            .meaning p,
+            .explain p {
+                width: 50vw;
+                margin-bottom: 100px;
+                font-size: 2vw;
+            }
+            h4 {
+                margin-left: 2%;
+                margin-bottom: 0;
+                font-size: 2.5vw;
+                margin-top: 1.5%;
+                background-color: black;
+                width: 7.5vw;
+                border-radius: 5px;
+                padding: 2px;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 90%;
+                margin-left: auto;
+                margin-right: 0;
+            }
+            th {
+                width: auto;
+                font-size: 2.5vw;
+            }
+            .system,
+            .container,
+            .proj,
+            .awards {
+                display: flex;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .content,
+            .achieve {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 0;
+            }
+            .c_prog,
+            .picture,
+            .larawan
+             {
+                width: 83%;
+                height: 50%;
+                margin-bottom: 0;
+                margin-left: 4%;
+
+            }
+            .c_prog img,
+            .picture img,
+            .larawan img
+             {
+                width: 100%;
+                height: 50%;
+                margin-bottom: 1vw;
+                margin-left: 0;
+            }
+            .state p,
+            .description p,
+            .meaning p
+             {
+                width: 78vw;
+                font-size: 2.7vw;
+                margin-bottom: 2vw;
+                
+            }
+            .state,
+            .description,
+            .meaning 
+            {
+                margin-top: 2vw;
+                margin-left: 1vw;
+                margin-right: 0;
+                margin-bottom: 5%;
+            }
+            .program,
+            .content,
+            .achieve {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .sql,
+            .pictures {
+                width: 83%;
+                height: 50%;
+                margin-bottom: 0;
+                margin-right: 13%;
+            }
+            .sql img,
+            .pictures img {
+                width: 100%;
+                height: 30%;
+                margin-bottom: 3vw;
+                margin-right:0;
+                margin-left: 0;
+
+            }
+            .paliwanag p,
+            .definition p,
+            .statement p {
+                width: 77vw;
+                font-size: 2.7vw;
+                margin-top: 0;
+            }
+            .paliwanag,
+            .definition,
+            .statement {
+                margin-left: 0;
+                margin-right: 5vw;
+                margin-top: 1vw;
+            }
+            .pics,
+            .imahe {
+                width: 70%;
+                height: 30%;
+                margin-left: 8.3%;
+                
+            }
+            .pics img,
+            .imahe img {
+                width: 100%;
+                height: 30%;
+                margin-bottom: 3vw;
+            }
+            .imahe img {
+                margin-bottom: 0;
+                margin-left: 3%;
+            }
+            .explain {
+                margin-top: 0;
+                
+            }
+            .explain p{
+                margin-top: 2vw;
+                width: 80vw;
+                font-size: 2.7vw;
+                margin-right: 3vw;
+            }
+        }
+    </style>
+    </head>
+    <body> 
+        <table>
+            <tr>
+            <th><a href="Home.html"><i class="fa fa-fw fa-home"></i> HOME</a></th>
+            <th><a href="About.html"><i class="fa fa-fw fa-user-circle-o"></i> ABOUT</a></th>
+            <th><a href="Resume.html"><i class="fa fa-file-text"></i> RESUME</a></th>
+            <th><a href="Portfolio.html" class="stay"><i class="fa fa-briefcase"></i> PORTFOLIO</a></th>
+            <th><a href="Contact.html"><i class="fa fa-envelope"></i> CONTACT</a></th>
+            </tr>
+        </table>
+    <br>
+    <h4 class="mav-3d" style="border: 3px solid #8B4513;"><span style="color: burlywood;">MA</span><span style="color: #c48f5a;">AV</span></h4>
+    <h1>PROJECTS</h1>
+    <br>
+    <br>
+    <div class ="system">
+        <div class="state">
+        <p><b>This system uses C++ tools, its purpose is to be user-friendly for financers to perceive the amount they will earn from lending, 
+            and for individuals who plan to loan money, they can see immediately their future amount with the fixed interest rate from the percentages of their income. 
+            
+            <br><br>(CLICK THE IMAGE TO VIEW MORE)
+        </b></p>
+        </div>
+            <div class="c_prog">
+                <a href="https://markvergara1203.github.io/contents/c++_img.html">
+                <img src="imaging/c++.png">
+                </a>
+            </div>
+    </div>
+    <div class ="program">
+        <div class="sql">
+            <a href="https://markvergara1203.github.io/contents/sql_img.html">
+            <img src="imaging/sql-pic.png">
+        </a>
+        </div>
+            <div class="paliwanag">
+                <p><b>This project uses SQL statement that creates a database schema that manages employee information. 
+                    This project aims to organize and manage employee-related information. It facilitates tracking employees,
+                    their departments, projects they work on, their supervisors, work hours, and dependent information.
+                <br><br>(CLICK THE IMAGE TO VIEW MORE)
+                </b></p>
+            </div>
+    </div>
+    <div class ="container">
+        <div class="description">
+        <p><b>This project is a Java program that offers a basic interface to manage employees, like adding, removing, displaying, and searching. 
+            It can serve as a starting point for basic employee management concepts and perform basic operations on a list of employees.
+            <br><br>(CLICK THE IMAGE TO VIEW MORE)
+        </b></p>
+        </div>
+            <div class="picture">
+                <a href="https://markvergara1203.github.io/contents/java_img.html">
+                <img src="imaging/program.png">
+                </a>
+            </div>
+    </div>
+    <br>
+    <h1>ARTWORKS</h1>
+    <br>
+    <br>
+    <div class ="content">
+        <div class="pics">
+            <a href="https://markvergara1203.github.io/contents/photography.html">
+            <img src="imaging/creative.jpg">
+            </a>
+        </div>
+            <div class="definition">
+                <p><b>These are my sample photos that I took in various places. By taking photos, I can show the beauty of diverse places 
+                    and share my creativity, experiences, and perspectives. Through these photographs, 
+                    I preserve moments that are emotionally meaningful for me.
+                <br><br>(CLICK THE IMAGE TO VIEW MORE) 
+                </b></p>
+            </div>
+    </div>
+    <div class ="proj">
+        <div class="meaning">
+            <p><b>These are samples of my drawings. Through these, I can show my views and ideas regarding what is happening in my surroundings. 
+                It improves my thinking to be creative and allows me to explore my imagination. 
+                At the top, it is about various traditions found in the Philippines, and below, it is about the lack of justice that people experience.
+            </b></p>
+        </div>
+            <div class="imahe">
+                <img src="imaging/draws.jpg">
+            </div>
+    </div>
+    <h1>ACHIEVEMENTS</h1>
+    <br>
+    <br>
+    <div class ="achieve">
+        <div class="pictures">
+            <a href="https://markvergara1203.github.io/contents/achievements.html">
+            <img src="imaging/merge.jpg">
+            </a>
+        </div>
+            <div class="statement">
+                <p><b>This image shows my academic achievements, which result from my determination and hard work. 
+                    In the image with a black background, I was listed as an academic achiever with a general average of 1.53. 
+                    I was listed as a dean's lister in the year 2022 in the orange image.
+                <br><br>(CLICK THE IMAGE TO VIEW MORE)    
+                </b></p>
+            </div>
+    </div>
+    <div class ="awards">
+        <div class="explain">
+            <p><b>These are the achievements I got playing sports in our area in the past. 
+                Playing sports helped me improve my strategic thinking and my cognitive function.
+            </b></p>
+        </div>
+            <div class="larawan">
+                <img src="imaging/award.jpg">
+            </div>
+    </div>
+    </body>
+</html>

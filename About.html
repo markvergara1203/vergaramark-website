@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@1,600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        table 
+        {border-collapse: collapse ; 
+            width: 50%; 
+            margin: 0;
+            margin-left: auto;
+            background-color: #CC9966;
+            border-radius: 10px;
+            height: 4.3vh;
+            margin-right: 40px;
+            box-shadow: 0 0 0 2px #8B4513;
+        }
+        th 
+        {
+            width: 25vw;
+            font-size: 1.1vw;
+        }
+        th a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            position: relative;
+        }
+        th a::after {
+            content: '';
+            display: block;
+            width: 0;
+            background-color: #8B4513;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 18%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        th a:hover::after {
+            width: 100%;
+        }
+        th a.stay::after {
+            width: 100%;
+        }
+        h1 {
+            font-family: 'Chonburi', serif;
+            font-size: 2.2vw;
+            text-align: center;
+            margin-top: 0;
+            
+        }
+        body {
+            background-color: burlywood;
+        }
+        .About-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-left: 5%;
+
+        }
+        .imaging {
+            margin-right: 40px;
+        }
+        .imaging img{
+            width: 33vw;
+            height: 33vw;
+            margin-bottom: 50px;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.9); 
+        }
+        .statement {
+            margin-top: 0;
+            margin-right: 20px;
+        }
+        .statement p {
+            margin-top: 0;
+            font-size: 1vw;
+            margin-right: 50px;
+            background-color: #CC9966;
+            padding: 7px; 
+            border-radius: 8px; 
+            font-family:Arial, Helvetica, sans-serif;
+            line-height: 1.4;
+            border: 2px solid #8B4513;
+        }
+        .info {
+            width: 92%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #CC9966;
+            border: 2px solid #8B4513;
+            border-radius: 8px; 
+            font-size: 1vw;
+            line-height: 1.4;
+            padding: 3px; 
+            display: grid;
+            grid-template-columns: 1fr 0.6fr;
+            gap: 10px;
+            
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .info-item b {
+            margin-right: 5px;
+            font-weight: bolder;
+        }
+        .services {
+            margin-top: 1px;
+            font-weight: bolder;
+        }
+        
+        .services img {
+            width: 2.1vw;
+            height: 2.6vh;
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 1%;
+            font-family: 'STIX Two Text', serif;
+            font-size: 2vw;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid transparent;
+            animation: typing 4s steps(40) forwards;
+        }
+        .services span {
+            font-size: 1vw;
+            font-weight: 900;
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+                text-shadow: 1.3px 1.3px 3.3px #8B4513;
+            }
+            to {
+                width: 100%;
+                text-shadow: 1.3px 1.3px 3.3px #8B4513;
+            }
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        .cursor2 {
+            display: inline-block;
+            width: 5px;
+            height: 1.2em;
+            background-color: #8B4513;
+            animation: blink 0.9s infinite;
+        }
+        .shadow {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            margin-left: 2%;
+            font-size: 3vw;
+        }
+        h4 {
+            font-family: 'Russo One', sans-serif;
+            margin-left: 3%;
+            margin-bottom: 0;
+            font-size: 1.7vw;
+            margin-top: 0;
+            background-color: black;
+            width: 5.2vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .mav-3d {
+            text-shadow: 1px 1px 2px #000, 0 0 1em #8B4513, 0 0 0.2em #c48f5a;
+        }
+        
+        @media only screen and (max-width: 900px) {
+            table {
+                width: 73%;
+                margin-left: auto;
+                margin-right: 40px;
+            }
+            th {
+                width: auto;
+                font-size: 2vw;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+            .About-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: 5%;
+            }
+            .imaging img {
+                width: 40vw;
+                height: 35vw;
+                margin-bottom: 20px;
+                margin-top: 50px;
+            }
+            .statement p {
+                font-size: 2.3vw;
+                margin-right: 20px;
+                padding: 8px;
+            }
+            .info {
+                grid-template-columns: 1fr;
+                width: 95.8%;
+                font-size: 2.3vw;
+            }
+            .services img {
+                width: 3vw;
+                height: 2.5vh;
+            }
+            .services span {
+                font-size: 2.3vw;
+            }
+            h3 {
+            margin-top: 0;
+            font-family: 'STIX Two Text', serif;
+            font-size: 4vw;
+            }
+            .shadow {
+                margin-left: 20%;
+            }
+            h4 {
+            margin-left: 2%;
+            margin-bottom: 0;
+            font-size: 2.5vw;
+            margin-top: 1%;
+            background-color: black;
+            width: 7.5vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 90%;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+            th {
+                width: auto;
+                font-size: 2.5vw;
+            }
+            .imaging img {
+                width: 45vw;
+                height: 40vw;
+                margin-bottom: 15px;
+                margin-top: 50px;
+            }
+            .statement {
+                width: 95vw;
+                margin-left: 15px;
+            }
+            .statement p {
+                font-size: 2.7vw;
+                padding: 8px;
+            }
+            .info {
+                width: 85vw;
+                grid-template-columns: 1fr;
+                font-size: 2.7vw;
+                margin-left: 4px;
+                padding: 8px;
+            }
+            .services {
+                margin-top: 5px;
+                font-size: 2.7vw;
+                font-weight: bolder;
+                }
+            .services img {
+                width: 3.5vw;
+                height: 3vh;
+            }
+            .services span {
+                font-size: 2.7vw;
+            }
+            h3 {
+                margin-top: 0;
+                font-family: 'STIX Two Text', serif;
+                font-size: 4.5vw;
+            }
+            .shadow{
+                margin-left: 50px;
+            }
+            h4 {
+            font-family: 'Russo One', sans-serif;
+            margin-left: 2%;
+            margin-bottom: 0;
+            font-size: 3vw;
+            margin-top: 0.7%;
+            background-color: black;
+            width: 9vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th><a href="Home.html"><i class="fa fa-fw fa-home"></i> HOME</a></th>
+            <th><a href="About.html" class="stay"><i class="fa fa-fw fa-user-circle-o"></i> ABOUT</a></th>
+            <th><a href="Resume.html"><i class="fa fa-file-text"></i> RESUME</a></th>
+            <th><a href="Portfolio.html"><i class="fa fa-briefcase"></i> PORTFOLIO</a></th>
+            <th><a href="Contact.html"><i class="fa fa-envelope"></i> CONTACT</a></th>
+        </tr>
+    </table>
+    <br>
+    <h4 class="mav-3d" style="border: 3px solid #8B4513;"><span style="color: burlywood;">MA</span><span style="color: #c48f5a;">AV</span></h4>
+    <h1>ABOUT</h1>
+    <br>
+    
+    <div class ="About-container">
+        <div class="imaging">
+        <img src="imaging/white picture.png">
+        </div>
+            <div class="statement">
+                <div class="shadow">
+                <h3 id="text1"> Hi there! My name is Mark Ariel Vergara <span class="cursor2"></span></h3>
+                </div>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> 
+                    My expertise has grown over the years in a variety of programming languages, 
+                    such as Java, C++, SQL, and more. I'm constantly on the lookout for new approaches to IT-related issues. 
+                    In 2021, I completed the JDVP program and gained knowledge about server and network configuration. 
+                    During my Senior High School years, I was awarded honors. 
+                    In my spare time, I enjoy playing sports and studying coding.</b>
+                <br>
+                <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>My enthusiasm for innovation pushes me to learn about cutting-edge approaches and broaden my range of abilities.
+                    This website aims to provide a peek into my experiences, my skills, and my passion for the IT industry,
+                     with the hope of allowing you to get to know me better and pique your interest.</b>
+                </p>
+                <div class="info">
+                    <div class="info-item">
+                        <b>Birthdate:</b> December 03, 2003
+                    </div>
+                    <div class="info-item">
+                        <b>School:</b> Rizal Technological University
+                    </div>
+                    <div class="info-item">
+                        <b>Address:</b> 09 Villa Bernardo St, San Joaquin Pasig City
+                    </div>
+                    <div class="info-item">
+                        <b>Birthplace:</b> Pasig City
+                    </div>
+                    <div class="services">
+                        <span>&#8212; My Services</span><br>
+                        <b>Programming:</b> <img src="imaging/javaicon.png"> <img src="imaging/c++icon.png"> <img src="imaging/pythonicon.png">
+                        <img src="imaging/htmlicon.png"> <img src="imaging/sqlicon.png"> <br>
+                        <b>Video Editing:</b> <img src="imaging/cupcuticon.jpg"> <img src="imaging/filmoraicon.png"> <br>
+                        <b>Photo Editing:</b> <img src="imaging/canvaicon.png"> <img src="imaging/picsarticon.png"> 
+                    </div>
+                </div>
+                <script>
+                    const text1 = " Hi there! I'm a Filipino IT student.";
+                    const text2 = " My name is Mark Ariel Vergara.";
+                    let currentText1 = '';
+                    let currentText2 = '';
+                    let isErasing1 = false;
+                    let isErasing2 = false;
+                    let i = 0;
+                    let j = 0;
+                    const speed = 87;
+                  
+                    function typeWriter() {
+                        if (!isErasing1 && i < text1.length) {
+                            currentText1 += text1.charAt(i);
+                            document.getElementById("text1").innerHTML = currentText1 + '<span class="cursor2"></span>';
+                            i++;
+                            setTimeout(typeWriter, speed);
+                        } else {
+                            if (!isErasing1) {
+                                isErasing1 = true;
+                                i = currentText1.length - 1;
+                            }
+                            if (i >= 0) {
+                                currentText1 = currentText1.slice(0, -1);
+                                document.getElementById("text1").innerHTML = currentText1 + '<span class="cursor2"></span>';
+                                i--;
+                                setTimeout(typeWriter, speed);
+                            } else {
+                                isErasing1 = false;
+                                currentText1 = '';
+                                i = 0;
+                                setTimeout(typeWriter2, 350);
+                            }
+                        }
+                    }
+                    function typeWriter2() {
+                        if (!isErasing2 && j < text2.length) {
+                            currentText2 += text2.charAt(j);
+                            document.getElementById("text1").innerHTML = currentText1 + currentText2 + '<span class="cursor2"></span>';
+                            j++;
+                            setTimeout(typeWriter2, speed);
+                        }
+                    }
+                    
+                    typeWriter();
+                </script>
+            
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse ; 
+            width: 50%; 
+            margin: 0;
+            margin-left: auto;
+            background-color: burlywood;
+            border-radius: 10px;
+            height: 4.3vh;
+            margin-right: 40px;
+            box-shadow: 0 0 0 2px #8B4513;
+        }
+        th 
+        {
+            width: 25vw;
+            font-size: 1.1vw;
+        }
+        th a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            position: relative;
+        }
+        th a::after {
+            content: '';
+            display: block;
+            width: 0;
+            background-color: #8B4513;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            height: 18%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        th a:hover::after {
+            width: 100%;
+        }
+        th a.stay::after {
+            width: 100%;
+        }
+        body {
+            background-color: #CC9966;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Chonburi', serif;
+            font-size: 2.2vw;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        h3 {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            letter-spacing: 1px;
+            font-size: 1.3vw;
+        }
+        .talk {
+            color: #fff;
+            text-align: center;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        
+        .contact-right {
+            background: burlywood;
+            display: flex;
+            flex-direction: column;
+            padding: 2vw 4vw;
+            width: 30vw;
+            height: 67vh;
+            font-size: 0.9vw;
+        }
+        .contact-right h3{
+            text-align: center;
+        }
+        .contact-right p {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            
+        }
+        .contact-right a {
+            color: #000
+        }
+        form  {
+            background: #8B4513;
+            display: flex;
+            flex-direction: column;
+            padding: 2vw 4vw;
+            width: 30vw;
+            height: 67vh;
+        }
+        form input, form textarea {
+            border: 0;
+            margin: 10px 0;
+            padding: 18px;
+            outline: none;
+            background: #fff;
+            font-size: 0.9vw;
+            border-radius: 10px;
+        }
+        form button {
+            padding: 15px;
+            background: burlywood;
+            font-size: 1.1vw;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            width: 8vw;
+            border-radius: 20px;
+        }
+        form button:hover {
+            background-color: red;
+        }
+        form h4{
+            color: #fff;
+            text-align: center;
+        }
+        .contact-right, form {
+            border: 1px solid black;
+            border-radius: 15px;
+        }
+        .contact-image {
+            width: 1.4vw;
+            height: 2.2vh;
+        }
+        .side-space {
+            margin-left: 25px;
+        }
+        .underline {
+            text-decoration: none;
+            border-bottom: 1px solid black;
+            padding-bottom: 2px;
+            font-weight: bold;
+        }
+        .no-underline {
+            text-decoration: none;
+        }
+        h4 {
+            font-family: 'Russo One', sans-serif;
+            margin-left: 3%;
+            margin-bottom: 0;
+            font-size: 1.7vw;
+            margin-top: 0;
+            background-color: black;
+            width: 5.2vw;
+            border-radius: 5px;
+            padding: 2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .mav-3d {
+            text-shadow: 1px 1px 2px #000, 0 0 1em #8B4513, 0 0 0.2em #c48f5a;
+        }
+        .inquery {
+            margin-top: 0;
+        }
+        .content form p {
+            font-size: 1vw;
+            text-align: center;
+        }
+        @media screen and (max-width: 900px) {
+            table {
+                width: 73%;
+                margin-left: auto;
+                margin-right: 40px;
+            }
+            th {
+                width: auto;
+                font-size: 2vw;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+            .content {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            form {
+                flex-direction: column;
+                padding: 2vw 4vw;
+                width: 40vw;
+                height: 83vw;
+                margin-top: 50px;
+            }
+            h3 {
+                font-size: 3vw;
+            }
+            .contact-right {
+                display: flex;
+                flex-direction: column;
+                padding: 2vw 4vw;
+                width: 41vw;
+                height: 83vw;
+                font-size: 1.7vw;
+                margin-top: 50px;
+            }
+            form input,
+            form textarea {
+                border: 0;
+                margin: 10px 0;
+                padding: 25px;
+                font-size: 1.8vw;
+            }
+            form button {
+                width: 35%;
+                height: auto;
+                font-size: 2vw;
+                border-radius: 15px;
+                margin-top: 18px;
+            }
+            .contact-image {
+                width: 2vw;
+                height: 1.5vh;
+            }
+            .side-space {
+                margin-left: 10px;
+            }
+            h4 {
+                margin-left: 2%;
+                margin-bottom: 0;
+                font-size: 2.5vw;
+                margin-top: 1.5%;
+                background-color: black;
+                width: 7.5vw;
+                border-radius: 5px;
+                padding: 2px;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+            .content form p {
+                font-size: 2.2vw;
+                text-align: center;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 90%;
+                margin-left: auto;
+                margin-right: 30px;
+            }
+            th {
+                width: auto;
+                font-size: 2.5vw;
+            }
+            h3 {
+                font-size: 4vw;
+            }
+            h1 {
+                margin-top: 0;
+            }
+            form {
+                flex-direction: column;
+                padding: 5vw 4vw;
+                width: 70vw;
+                height: 75vh;
+                margin-top: 30px;
+                padding: 2vw 4vw;
+            }
+            .contact-right {
+                display: flex;
+                flex-direction: column;
+                padding: 5vw 4vw;
+                width: 70vw;
+                height: 75vh;
+                font-size: 2.5vw;
+                margin-top: 5%;
+            }
+            form input,
+            form textarea {
+                border: 0;
+                margin: 10px 0;
+                padding: 15px;
+                font-size: 2vw;
+            }
+            form button {
+                width: 30%;
+                margin-top: 5px;
+                height: auto;
+                font-size: 2.5vw;
+                border-radius: 15px;
+            }
+            .contact-image {
+                width: 2.3vw;
+                height: 1.8vh;
+            }
+            h4 {
+                margin-left: 2%;
+                margin-bottom: 0;
+                font-size: 3vw;
+                margin-top: 0%;
+                background-color: black;
+                width: 9vw;
+                border-radius: 5px;
+                padding: 2px;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            }
+            .content form p {
+                font-size: 2.7vw;
+                text-align: center;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th><a href="Home.html"><i class="fa fa-fw fa-home"></i> HOME</a></th>
+                <th><a href="About.html"><i class="fa fa-fw fa-user-circle-o"></i> ABOUT</a></th>
+                <th><a href="Resume.html"><i class="fa fa-file-text"></i> RESUME</a></th>
+                <th><a href="Portfolio.html"><i class="fa fa-briefcase"></i> PORTFOLIO</a></th>
+                <th><a href="Contact.html" class="stay"><i class="fa fa-envelope"></i> CONTACT</a></th>
+            </tr>
+        </table>
+        <br>
+        <h4 class="mav-3d" style="border: 3px solid #8B4513;"><span style="color: burlywood;">MA</span><span style="color: #c48f5a;">AV</span></h4>
+        <h1>CONTACT</h1>
+        <hr>
+        <div class="content">
+            <form name="submit-to-google-sheet">
+                <h3 class="talk">Let's talk!</h3>
+                <p class="inquery" style="color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold; letter-spacing: 0.8px;">
+                    If you have any questions, please message me and I'll respond as soon as possible.</p>
+                <input type="text" name="name" placeholder="Enter name">
+                <input type="email" name="email" placeholder="Enter email">
+                <input type="text" name="phone" placeholder="Enter phone no.">
+                <textarea name="message" rows="4" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        <div class="contact-right">
+            <h3>Direct Contact</h3>
+            <p><img src="imaging/email.png" class="contact-image">
+                <span style="font-weight: 900;">Email:</span>  
+                <br>
+                <span class="side-space"><u class="underline">markvergara771@gmail.com</u></span></p>
+            <br>
+            <p><img src="imaging/call.png" class="contact-image">
+                <span style="font-weight: 900;">Phone no:</span>   
+                <br>
+                <span class="side-space"><u class="underline">09212891218</u></span></p>
+            <br>
+            <p><img src="imaging/loc.png" class="contact-image">
+                <span style="font-weight: 800;">Address:</span>  
+                <br>
+                <span class="side-space"><u class="underline">09 Villa Bernardo, San Joaquin Pasig City</u></span></p>
+            <br>
+            <p><img src="imaging/fb.png" class="contact-image">
+                <span style="font-weight: 900;">Facebook:</span>
+                <br>
+                <a href ="https://www.facebook.com/mark.vergara.yossi" class="no-underline"><span class="side-space"><u class="underline">https://www.facebook.com/mark.vergara.yossi</u></span></a></p>
+            <br>
+            <p><img src="imaging/instagram.png" class="contact-image">
+                <span style="font-weight: 900;">Instagram:</span>
+                <br>
+                <a href ="https://www.instagram.com/" class="no-underline"><span class="side-space"><u class="underline">https://www.instagram.com/</u></span></a></p>
+        </div>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwtaxwYqzfMV_XrvPRhZaUNl_v7O1ViB18YdVAjUl5tYxMKwqHKEBB4ybjSKsJgzq3h/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Message Sent Successfully"))
+                .then(() => {window.location.reload();})
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>
